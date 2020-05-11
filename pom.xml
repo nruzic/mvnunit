@@ -31,7 +31,7 @@
 
     <groupId>com.github.nruzic.mvnunit</groupId>
     <artifactId>mvnunit</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>mvnunit</name>
     <url>http://github.com/nruzic/mvnunit</url>
@@ -51,7 +51,7 @@
         <url>http://github.com/nruzic/mvnunit</url>
         <connection>scm:git:http://github.com/nruzic/mvnunit.git</connection>
         <developerConnection>scm:git:https://github.com/nruzic/mvnunit.git</developerConnection>
-      <tag>mvnunit-1.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <developers>
