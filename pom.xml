@@ -42,6 +42,31 @@
         <checkstyle.failOnViolation>false</checkstyle.failOnViolation>
     </properties>
 
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>http://github.com/nruzic/mvnunit</url>
+        <connection>scm:git:http://github.com/nruzic/mvnunit.git</connection>
+        <developerConnection>scm:git:https://github.com/nruzic/mvnunit.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>nruzic</id>
+            <name>Nikola Ruzic</name>
+            <email>nikola.ruzic.dev@gmail.com</email>
+            <url>https://github.com/nruzic</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <build>
         <pluginManagement>
             <plugins>
