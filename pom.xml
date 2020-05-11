@@ -40,8 +40,20 @@
 
     <properties>
         <checkstyle.failOnViolation>false</checkstyle.failOnViolation>
-        <version-maven-javadoc-plugin>3.2.0</version-maven-javadoc-plugin>
     </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <configuration>
+                        <source>8</source>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <dependencies>
         <dependency>
