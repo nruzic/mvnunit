@@ -6,6 +6,8 @@ package com.github.nruzic.mvnunit.simple;
 import java.io.File;
 
 import com.github.nruzic.mvnunit.ModelFactory;
+import com.github.nruzic.mvnunit.RepositoryFactory;
+import com.github.nruzic.mvnunit.RepositorySystemFactory;
 
 import org.apache.maven.model.Model;
 import org.apache.maven.model.building.DefaultModelBuilderFactory;
@@ -21,11 +23,38 @@ import org.apache.maven.model.resolution.ModelResolver;
  */
 public class SimpleModelFactory implements ModelFactory
 {
+    private final RepositoryFactory repositoryFactory;
+
+    private final RepositorySystemFactory repositorySystemFactory;
+
+    public SimpleModelFactory()
+    {
+        this(new SimpleRepositoryFactory(), new SimpleRepositorySystemFactory());
+    }
+
+    public SimpleModelFactory(final RepositoryFactory repositoryFactory)
+    {
+        this(repositoryFactory, new SimpleRepositorySystemFactory());
+    }
+
+    public SimpleModelFactory(final RepositorySystemFactory repositorySystemFactory)
+    {
+        this(new SimpleRepositoryFactory(), repositorySystemFactory);
+    }
+
+    public SimpleModelFactory(
+            final RepositoryFactory repositoryFactory,
+            final RepositorySystemFactory repositorySystemFactory)
+    {
+        this.repositoryFactory = repositoryFactory;
+        this.repositorySystemFactory = repositorySystemFactory;
+    }
+
     @Override
     public Model getModel()
     {
         final SimpleModelResolverFactory modelResolverFactory = new SimpleModelResolverFactory(
-                new SimpleRepositoryFactory(), new SimpleRepositorySystemFactory());
+               this.repositoryFactory, this.repositorySystemFactory);
         final ModelResolver modelResolver = modelResolverFactory.getModelResolver();
 
         final ModelBuildingRequest modelBuildingRequest = new DefaultModelBuildingRequest();
